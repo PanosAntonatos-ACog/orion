@@ -1,0 +1,32 @@
+{"properties": [
+  {
+    "name": "thesis.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtExpirationMs'"
+  },
+  {
+    "name": "thesis.app.jwtCookieName",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtCookieName'"
+  },
+  {
+    "name": "thesis.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtSecret'"
+  },
+  {
+    "name": "thesis.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtExpirationMs'"
+  },
+  {
+    "name": "thesis.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtExpirationMs'"
+  },
+  {
+    "name": "thesis.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'thesis.app.jwtExpirationMs'"
+  }
+]}
