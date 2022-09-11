@@ -15,5 +15,5 @@ public class SolarPanelRequirements {
 	private Integer daysOfAutonomy;
 	private Double totalEnergyWasteOfDecember;
 	private Boolean isAutonomous;
-
+	private Double userElectricalUsage;
 }
