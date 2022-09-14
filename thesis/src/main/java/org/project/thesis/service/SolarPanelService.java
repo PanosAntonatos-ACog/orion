@@ -121,6 +121,7 @@ public class SolarPanelService {
 
         Integer numberOfAccumulator = volts/12;
 //         TODO: find the total amount of accumulators n = days of autonomy
+//        Integer totalAmmountOfAccumulator =
 
 
         return SolarPanelDto.builder().build();

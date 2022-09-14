@@ -12,6 +12,26 @@
       #f="ngForm"
       novalidate
     >
+
+    <div class="form-group">
+      <label for="isAutonomous">Will the system be autonomous?</label>
+      <input
+        type="text"
+        class="form-control"
+        name="isAutonomous"
+        [(ngModel)]="form.isAutonomous"
+        required
+        #isAutonomous="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        role="alert"
+        *ngIf="isAutonomous.errors && f.submitted"
+      >
+        Autonomous field is required!
+      </div>
+    </div>
+
       <div class="form-group">
         <label for="districtName">District Name</label>
         <input
@@ -52,9 +72,9 @@
       </div>
 
       <div class="form-group">
-        <label for="daysOfAutonomy">Days of Autonomy</label>
+        <label for="totalEnergyWasteOfDecember">Days of Autonomy</label>
         <input
-          type="daysOfAutonomy"
+          type="totalEnergyWasteOfDecember"
           class="form-control"
           name="daysOfAutonomy"
           [(ngModel)]="form.daysOfAutonomy"
