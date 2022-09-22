@@ -8,15 +8,17 @@ import { UserService } from '../_services/user.service';
   templateUrl: './board-user.component.html',
   styleUrls: ['./board-user.component.css']
 })
+
 export class BoardUserComponent implements OnInit {
   form: any = {
     districtName: null,
     daysOfAutonomy: null,
     totalEnergyWasteOfDecember: null,
-    isAutonomous: null,
+    isAutonomous: false,
     userElectricalUsage: null
   };
 
+  showFootNote = false;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -34,17 +36,17 @@ export class BoardUserComponent implements OnInit {
     }
   }
 
+  updateState(){
+    this.showFootNote = !this.showFootNote;
+  }
+
   onSubmit(): void {
     const { districtName, daysOfAutonomy, totalEnergyWasteOfDecember, isAutonomous, userElectricalUsage } = this.form;
 
-    this.userService.getPublicContent().subscribe(
+    this.userService.getPublicContent(this.form).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
+        console.log(data);
+        
         this.reloadPage();
       },
       err => {

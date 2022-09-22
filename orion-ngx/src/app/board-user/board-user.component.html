@@ -1,10 +1,5 @@
 <div class="col-md-12">
   <div class="card card-container">
-    <img
-      id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
-    />
     <form
       *ngIf="isLoggedIn"
       name="form"
@@ -13,24 +8,16 @@
       novalidate
     >
 
+
     <div class="form-group">
-      <label for="isAutonomous">Will the system be autonomous?</label>
-      <input
-        type="text"
-        class="form-control"
-        name="isAutonomous"
-        [(ngModel)]="form.isAutonomous"
-        required
+      <label for="isAutonomous">Check the box if your system is autonomous</label>
+        <input type="checkbox" class="form-control" name="isAutonomous" 
+        [(ngModel)]="form.isAutonomous"  
         #isAutonomous="ngModel"
-      />
-      <div
-        class="alert alert-danger"
-        role="alert"
-        *ngIf="isAutonomous.errors && f.submitted"
-      >
-        Autonomous field is required!
-      </div>
+        (change)="updateState()"/>
+
     </div>
+
 
       <div class="form-group">
         <label for="districtName">District Name</label>
@@ -40,8 +27,8 @@
           name="districtName"
           [(ngModel)]="form.districtName"
           required
-          #districtName="ngModel"
-        />
+          placeholder="Αθήνα"
+          #districtName="ngModel"/>
         <div
           class="alert alert-danger"
           role="alert"
@@ -50,7 +37,8 @@
           District name is required!
         </div>
       </div>
-      <div class="form-group">
+
+      <div class="form-group" *ngIf="showFootNote">
         <label for="daysOfAutonomy">Days of Autonomy</label>
         <input
           type="daysOfAutonomy"
@@ -60,6 +48,7 @@
           required
           max="6" 
           min="1"
+          placeholder="Αθήνα"
           #daysOfAutonomy="ngModel"
         />
         <div
@@ -72,24 +61,16 @@
       </div>
 
       <div class="form-group">
-        <label for="totalEnergyWasteOfDecember">Days of Autonomy</label>
+        <label for="totalEnergyWasteOfDecember">Total energy used during December</label>
         <input
           type="totalEnergyWasteOfDecember"
           class="form-control"
-          name="daysOfAutonomy"
-          [(ngModel)]="form.daysOfAutonomy"
-          required
+          name="totalEnergyWasteOfDecember"
+          [(ngModel)]="form.totalEnergyWasteOfDecember"
           max="6" 
           min="1"
-          #daysOfAutonomy="ngModel"
+          #totalEnergyWasteOfDecember="ngModel"
         />
-        <div
-          class="alert alert-danger"
-          role="alert"
-          *ngIf="daysOfAutonomy.errors && f.submitted"
-        >
-          <div *ngIf="daysOfAutonomy.errors.required">Days of autonomy is required</div>
-        </div>
       </div>
 
       <div class="form-group">
