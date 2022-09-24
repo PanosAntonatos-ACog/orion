@@ -5,12 +5,16 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { HomeComponent } from './home/home.component';
+import { NetMeteringComponent } from './net-metering/net-metering.component';
+import { SolarPanelComponent } from './solar-panel/solar-panel.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'net', component: NetMeteringComponent },
+  { path: 'solar', component: SolarPanelComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

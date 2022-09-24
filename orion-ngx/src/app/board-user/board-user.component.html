@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="container">
   <div class="card card-container">
     <form
       *ngIf="isLoggedIn"
@@ -7,17 +7,22 @@
       #f="ngForm"
       novalidate
     >
-
-
-    <div class="form-group">
-      <label for="isAutonomous">Check the box if your system is autonomous</label>
-        <input type="checkbox" class="form-control" name="isAutonomous" 
-        [(ngModel)]="form.isAutonomous"  
-        #isAutonomous="ngModel"
-        (change)="updateState()"/>
-
-    </div>
-
+      <div class="form-group">
+        <label for="isAutonomous"
+          >Check the box if your system is autonomous</label
+        >
+        <div class="border d-flex align-items-center justify-content-center">
+          <div class="form-check-inline">
+            <input
+              type="checkbox"
+              name="isAutonomous"
+              [(ngModel)]="form.isAutonomous"
+              #isAutonomous="ngModel"
+              (change)="updateState()"
+            />
+          </div>
+        </div>
+      </div>
 
       <div class="form-group">
         <label for="districtName">District Name</label>
@@ -28,7 +33,8 @@
           [(ngModel)]="form.districtName"
           required
           placeholder="Αθήνα"
-          #districtName="ngModel"/>
+          #districtName="ngModel"
+        />
         <div
           class="alert alert-danger"
           role="alert"
@@ -46,9 +52,9 @@
           name="daysOfAutonomy"
           [(ngModel)]="form.daysOfAutonomy"
           required
-          max="6" 
+          max="6"
           min="1"
-          placeholder="Αθήνα"
+          placeholder="1 - 6 days"
           #daysOfAutonomy="ngModel"
         />
         <div
@@ -56,30 +62,61 @@
           role="alert"
           *ngIf="daysOfAutonomy.errors && f.submitted"
         >
-          <div *ngIf="daysOfAutonomy.errors.required">Days of autonomy is required</div>
+          <div *ngIf="daysOfAutonomy.errors.required">
+            Days of autonomy is required
+          </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="totalEnergyWasteOfDecember">Total energy used during December</label>
+      <div class="form-group" *ngIf="showFootNote">
+        <label for="totalEnergyWasteOfDecember"
+          >Total energy used during December</label
+        >
         <input
           type="totalEnergyWasteOfDecember"
           class="form-control"
           name="totalEnergyWasteOfDecember"
+          required
           [(ngModel)]="form.totalEnergyWasteOfDecember"
-          max="6" 
-          min="1"
           #totalEnergyWasteOfDecember="ngModel"
         />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="totalEnergyWasteOfDecember.errors && f.submitted"
+        >
+          <div *ngIf="totalEnergyWasteOfDecember.errors.required">
+            Total energy wasted is required
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group" *ngIf="!showFootNote">
+        <label for="userElectricalUsage">Yearly energy used</label>
+        <input
+          type="userElectricalUsage"
+          class="form-control"
+          name="userElectricalUsage"
+          placeholder="8.500 - 30.000"
+          required
+          [(ngModel)]="form.userElectricalUsage"
+          #userElectricalUsage="ngModel"
+        />
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="userElectricalUsage.errors && f.submitted"
+        >
+          <div *ngIf="userElectricalUsage.errors.required">
+            Total energy wasted is required
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
-        <button class="btn btn-primary btn-block">
-          Calculate
-        </button>
+        <button class="btn btn-primary btn-block" id="submit">Calculate</button>
       </div>
-      <div class="form-group">
-      </div>
+      <div class="form-group"></div>
     </form>
   </div>
 </div>

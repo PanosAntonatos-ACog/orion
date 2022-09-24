@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 import { UserService } from '../_services/user.service';
@@ -24,7 +25,7 @@ export class BoardUserComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private userService: UserService) {
+  constructor(private route: Router, private authService: AuthService, private tokenStorage: TokenStorageService, private userService: UserService) {
     
    }
 
@@ -45,9 +46,9 @@ export class BoardUserComponent implements OnInit {
 
     this.userService.getPublicContent(this.form).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         
-        this.reloadPage();
+        this.route.navigate(['/solar'], {state : {data}});
       },
       err => {
         this.errorMessage = err.error.message;

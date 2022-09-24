@@ -22,7 +22,7 @@ public class SolarPanelService {
 
     public SolarPanelDto calculateNotAutonomousSystem(SolarPanelRequirements request) {
 
-        if (request.getTotalEnergyWasteOfDecember() <= SMOL_BOI) {
+        if (request.getUserElectricalUsage() <= SMOL_BOI) {
             return SolarPanelDto
                     .builder()
                     .name("Sharp")
@@ -31,7 +31,7 @@ public class SolarPanelService {
                     .inverterName("Fronius Symo")
                     .inverterValue("5.0 Kw")
                     .build();
-        } else if (request.getTotalEnergyWasteOfDecember() <= MEDIUM_BOI) {
+        } else if (request.getUserElectricalUsage() <= MEDIUM_BOI) {
             return SolarPanelDto
                     .builder()
                     .name("Sharp")
@@ -40,7 +40,7 @@ public class SolarPanelService {
                     .inverterName("Fronius Symo")
                     .inverterValue("6.0 Kw")
                     .build();
-        } else if (request.getTotalEnergyWasteOfDecember() <= LARGE_BOI) {
+        } else if (request.getUserElectricalUsage() <= LARGE_BOI) {
             return SolarPanelDto
                     .builder()
                     .name("Sharp")
@@ -61,8 +61,8 @@ public class SolarPanelService {
         }
 
         SolarPanelDto solar = new SolarPanelDto();
-        District dist = districtRepository.findByDistrictName(request.getDistrictName());
-        Double userElectricalUsage = request.getUserElectricalUsage() / 31;
+        District dist = districtRepository.findByCapital(request.getDistrictName());
+        Double userElectricalUsage = request.getTotalEnergyWasteOfDecember() / 31;
         Integer numberOfSolarPanels = (int) Math.round(Math.ceil(userElectricalUsage / WATTS));
         Integer volts = null;
         if (userElectricalUsage <= 3) {
@@ -121,10 +121,11 @@ public class SolarPanelService {
 
         Integer numberOfAccumulator = volts/12;
 //         TODO: find the total amount of accumulators n = days of autonomy
-//        Integer totalAmmountOfAccumulator =
+        solar.setNumberOfAccumulator(numberOfAccumulator * request.getDaysOfAutonomy());
+        solar.setWatts(445);
+        solar.setNumberOfSolarPanels(numberOfSolarPanels);
 
-
-        return SolarPanelDto.builder().build();
+        return solar;
     }
 
 }

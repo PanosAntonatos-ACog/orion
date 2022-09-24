@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="card card-container">
+    <form>
+      <div class="form-group">
+        <label for="numberOfSolarPanels">Number of Solar Panels</label>
+        <input
+          type="text"
+          class="form-control"
+          name="numberOfSolarPanels"
+          [(ngModel)]="form.numberOfSolarPanels"
+          #numberOfSolarPanels="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="name">Solar Panel Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          [(ngModel)]="form.name"
+          #name="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="watts">Solar Panel Watts</label>
+        <input
+          type="text"
+          class="form-control"
+          name="watts"
+          [(ngModel)]="form.watts"
+          #watts="ngModel"
+          disabled=true
+        />
+      </div>
+      <div class="form-group">
+        <label>Solar Panels in Line</label>
+        <input type="text"
+        class="form-control"
+        name="numberOfSolarPanelsInLine"
+        [(ngModel)]="form.numberOfSolarPanelsInLine"
+        #numberOfSolarPanelsInLine="ngModel"
+        disabled=true/>
+      </div>
+      <div class="form-group">
+        <label for="inverterName">Inverter Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="inverterName"
+          [(ngModel)]="form.inverterName"
+          #inverterName="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="inverterValue">Inverter Value</label>
+        <input
+          type="text"
+          class="form-control"
+          name="inverterValue"
+          [(ngModel)]="form.inverterValue"
+          #inverterValue="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="output">Output</label>
+        <input
+          type="text"
+          class="form-control"
+          name="output"
+          [(ngModel)]="form.output"
+          #output="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="powerAt25">Power at 25</label>
+        <input
+          type="text"
+          class="form-control"
+          name="powerAt25"
+          [(ngModel)]="form.powerAt25"
+          #powerAt25="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="powerAt25W">Power at 25 Watts</label>
+        <input
+          type="text"
+          class="form-control"
+          name="powerAt25W"
+          [(ngModel)]="form.powerAt25W"
+          #powerAt25W="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="maxWatts">Maxx Watts Output</label>
+        <input
+          type="text"
+          class="form-control"
+          name="maxWatts"
+          [(ngModel)]="form.maxWatts"
+          #maxWatts="ngModel"
+        />
+      </div>
+      <div class="form-group">
+        <label for="numberOfSolarPanelsInParallel">Number of Paraller Solar Panels</label>
+        <input
+          type="text"
+          class="form-control"
+          name="numberOfSolarPanelsInParallel"
+          [(ngModel)]="form.numberOfSolarPanelsInParallel"
+          #numberOfSolarPanelsInParallel="ngModel"
+        />
+      </div>
+    </form>
+  </div>
+</div>

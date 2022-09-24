@@ -9,8 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component'
 import { RegisterComponent } from './register/register.component';
 import { BoardUserComponent } from './board-user/board-user.component';
+import { NetMeteringComponent } from './net-metering/net-metering.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SolarPanelComponent } from './solar-panel/solar-panel.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     LoginComponent,
     RegisterComponent,
     BoardUserComponent,
-    HomeComponent
+    HomeComponent,
+    SolarPanelComponent,
+    NetMeteringComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

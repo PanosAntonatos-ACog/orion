@@ -21,4 +21,5 @@ public class SolarPanelDto {
 	private Integer powerAt25W;
 	private Integer maxWatts;
 	private Integer numberOfSolarPanelsInParallel;
+	private Integer numberOfAccumulator;
 }

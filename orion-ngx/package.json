@@ -16,11 +16,17 @@
     "@angular/compiler": "~12.0.2",
     "@angular/core": "~12.0.2",
     "@angular/forms": "~12.0.2",
+    "@angular/localize": "~12.0.2",
     "@angular/material": "~12.0.2",
     "@angular/material-moment-adapter": "~12.0.2",
     "@angular/platform-browser": "~12.0.2",
     "@angular/platform-browser-dynamic": "~12.0.2",
     "@angular/router": "~12.0.2",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "angular-bootstrap-checkbox": "^0.5.0",
+    "angular-material": "^1.2.5",
+    "bootstrap": "^5.2.1",
+    "font-awesome": "^4.7.0",
     "rxjs": "~6.6.0",
     "zone.js": "~0.11.4"
   },
@@ -39,5 +45,4 @@
     "tslib": "^2.4.0",
     "typescript": "~4.2.3"
   }
-
 }
