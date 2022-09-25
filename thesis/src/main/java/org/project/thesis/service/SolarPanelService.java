@@ -120,7 +120,6 @@ public class SolarPanelService {
         }
 
         Integer numberOfAccumulator = volts/12;
-//         TODO: find the total amount of accumulators n = days of autonomy
         solar.setNumberOfAccumulator(numberOfAccumulator * request.getDaysOfAutonomy());
         solar.setWatts(445);
         solar.setNumberOfSolarPanels(numberOfSolarPanels);

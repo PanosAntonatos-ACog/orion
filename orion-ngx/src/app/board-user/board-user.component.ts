@@ -46,8 +46,6 @@ export class BoardUserComponent implements OnInit {
 
     this.userService.getPublicContent(this.form).subscribe(
       data => {
-        // console.log(data);
-        
         this.route.navigate(['/solar'], {state : {data}});
       },
       err => {
