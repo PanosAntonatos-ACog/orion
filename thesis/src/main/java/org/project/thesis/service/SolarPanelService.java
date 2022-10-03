@@ -61,7 +61,7 @@ public class SolarPanelService {
         }
 
         SolarPanelDto solar = new SolarPanelDto();
-        District dist = districtRepository.findByCapital(request.getDistrictName());
+        District dist = districtRepository.findByDistrictName(request.getDistrictName());
         Double userElectricalUsage = request.getTotalEnergyWasteOfDecember() / 31;
         Integer numberOfSolarPanels = (int) Math.round(Math.ceil(userElectricalUsage / WATTS));
         Integer volts = null;
@@ -119,9 +119,10 @@ public class SolarPanelService {
             solar.setNumberOfSolarPanelsInParallel(numberOfSolarPanels / 2 + 1);
         }
 
-        Integer numberOfAccumulator = volts/12;
+        Integer numberOfAccumulator = volts / 12;
         solar.setNumberOfAccumulator(numberOfAccumulator * request.getDaysOfAutonomy());
         solar.setWatts(445);
+        solar.setName("Sharp");
         solar.setNumberOfSolarPanels(numberOfSolarPanels);
 
         return solar;

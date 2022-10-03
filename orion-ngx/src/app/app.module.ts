@@ -14,6 +14,8 @@ import { NetMeteringComponent } from './net-metering/net-metering.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SolarPanelComponent } from './solar-panel/solar-panel.component';
+import { AppMaterialModule } from "./app.material-module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,8 +31,10 @@ import { SolarPanelComponent } from './solar-panel/solar-panel.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AppMaterialModule,
     HttpClientModule,
     NgbModule,
+    BrowserAnimationsModule,
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

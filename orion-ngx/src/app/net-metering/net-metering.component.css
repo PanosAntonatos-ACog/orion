@@ -25,3 +25,7 @@ label {
     width: 850px;
     height: auto;
   }
+
+  table {
+    width: 100%;
+  }
