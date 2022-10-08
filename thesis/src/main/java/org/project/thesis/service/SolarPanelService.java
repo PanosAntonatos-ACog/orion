@@ -63,19 +63,16 @@ public class SolarPanelService {
         SolarPanelDto solar = new SolarPanelDto();
         District dist = districtRepository.findByDistrictName(request.getDistrictName());
         Double userElectricalUsage = request.getTotalEnergyWasteOfDecember() / 31;
-        Integer numberOfSolarPanels = (int) Math.round(Math.ceil(userElectricalUsage / WATTS));
+        Integer numberOfSolarPanels = (int) Math.round(Math.ceil(userElectricalUsage / 1000));
         Integer volts = null;
         if (userElectricalUsage <= 3) {
             volts = 12;
 
-        }
-        if (userElectricalUsage <= 10) {
+        } else if (userElectricalUsage <= 10) {
             volts = 24;
-        }
-        if (userElectricalUsage <= 15) {
+        } else if (userElectricalUsage <= 15) {
             volts = 48;
-        }
-        if (userElectricalUsage > 15) {
+        } else if (userElectricalUsage > 15) {
             throw new RuntimeException("Electrical usage exceeds 15 kWp");
         }
 
@@ -87,24 +84,21 @@ public class SolarPanelService {
             solar.setPowerAt25(1200);
             solar.setPowerAt25W(1000);
             solar.setMaxWatts(2400);
-        }
-        if (userElectricalUsage <= 5.4) {
+        } else if (userElectricalUsage <= 5.4) {
             solar.setInverterName("Victron Phoenix 1200 VA 24V");
             solar.setInverterValue("19-33 V");
             solar.setOutput(230);
             solar.setPowerAt25(1200);
             solar.setPowerAt25W(1000);
             solar.setMaxWatts(2400);
-        }
-        if (userElectricalUsage <= 10) {
+        } else if (userElectricalUsage <= 10) {
             solar.setInverterName("Victron Phoenix 3000 VA");
             solar.setInverterValue("19-33 V");
             solar.setOutput(230);
             solar.setPowerAt25(3000);
             solar.setPowerAt25W(2500);
             solar.setMaxWatts(6000);
-        }
-        if (userElectricalUsage <= 15) {
+        } else if (userElectricalUsage <= 15) {
             solar.setInverterName("Victron Phoenix 5000 VA");
             solar.setInverterValue("38-66 V");
             solar.setOutput(230);
@@ -114,7 +108,7 @@ public class SolarPanelService {
         }
 
         if (numberOfSolarPanels / 2 % 2 == 0) {
-            solar.setNumberOfSolarPanelsInParallel(numberOfSolarPanels / 2);
+            solar.setNumberOfSolarPanelsInParallel((int) Math.ceil(numberOfSolarPanels / 2));
         } else {
             solar.setNumberOfSolarPanelsInParallel(numberOfSolarPanels / 2 + 1);
         }

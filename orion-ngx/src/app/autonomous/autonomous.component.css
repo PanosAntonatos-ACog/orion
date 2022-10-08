@@ -1,28 +1,68 @@
 label {
-    display: block;
-    margin-top: 10px;
-  }
-  
-  .card-container.card {
-    max-width: 400px !important;
-    padding: 40px 40px;
-  }
-  
-  .card {
-    background-color: #f7f7f7;
-    padding: 20px 25px 30px;
-    margin: 0 auto 25px;
-    margin-top: 50px;
-  }
+  display: block;
+  margin-top: 10px;
+}
 
-  .container{
-    padding: 20px 25px 30px;
-  }
-  
-  .image {
-    float:left;
-    margin: 30px;
-    width: 850px;
-    height: auto;
-  }
+.card-container.card {
+  max-width: 400px !important;
+  padding: 40px 40px;
+}
 
+.card {
+  background-color: #f7f7f7;
+  padding: 20px 25px 30px;
+  margin: 0 auto 25px;
+  margin-top: 50px;
+}
+
+.container{
+  padding: 20px 25px 30px;
+}
+
+.image {
+  float:left;
+  margin: 30px;
+  width: 850px;
+  height: auto;
+}
+
+table {
+  width: 80%;
+}  
+
+.mat-column-position {
+  width: 24px;
+  border-right: 1px solid currentColor;
+  padding-right: 52px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.mat-column-name {
+  padding-left: 48px;
+  font-size: 18px;
+}
+
+.mat-column-weight {
+  font-style: italic;
+}
+
+.mat-column-symbol {
+  width: 24p;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.row-is-clicked {
+  font-weight: bold;
+}

@@ -27,5 +27,42 @@ label {
   }
 
   table {
-    width: 100%;
+    width: 80%;
+  }  
+
+  .mat-column-position {
+    width: 24px;
+    border-right: 1px solid currentColor;
+    padding-right: 52px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  .mat-column-name {
+    padding-left: 48px;
+    font-size: 18px;
+  }
+  
+  .mat-column-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-symbol {
+    width: 24p;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    border-color: currentColor;
+  }
+  
+  .row-is-clicked {
+    font-weight: bold;
   }

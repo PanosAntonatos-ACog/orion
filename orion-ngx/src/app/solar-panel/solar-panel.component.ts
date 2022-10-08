@@ -21,7 +21,8 @@ export class SolarPanelComponent implements OnInit {
     powerAt25W: null,
     maxWatts: null,
     numberOfSolarPanelsInParallel: null,
-    numberOfSolarPanelsInLine: 2
+    numberOfSolarPanelsInLine: 2,
+    numberOfAccumulator: null
   };
 
   constructor(private router: Router) {
@@ -40,7 +41,8 @@ export class SolarPanelComponent implements OnInit {
     this.form.maxWatts = resp.maxWatts;
     this.form.numberOfSolarPanelsInParallel =
       resp.numberOfSolarPanelsInParallel;
-    this.form.numberOfSolarPanelsInLine = 2
+    this.form.numberOfSolarPanelsInLine = 2;
+    this.form.numberOfAccumulator = resp.numberOfAccumulator;
   }
 
   ngOnInit(): void {
