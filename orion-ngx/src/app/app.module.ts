@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component'
 import { RegisterComponent } from './register/register.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { NetMeteringComponent } from './net-metering/net-metering.component';
+import { AutonomousComponent } from './autonomous/autonomous.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,7 +26,8 @@ import { MatTableModule } from '@angular/material/table';
     BoardUserComponent,
     HomeComponent,
     SolarPanelComponent,
-    NetMeteringComponent
+    NetMeteringComponent,
+    AutonomousComponent
   ],
   imports: [
     BrowserModule,

@@ -63,7 +63,7 @@ public class SolarPanelService {
         SolarPanelDto solar = new SolarPanelDto();
         District dist = districtRepository.findByDistrictName(request.getDistrictName());
         Double userElectricalUsage = request.getTotalEnergyWasteOfDecember() / 31;
-        Integer numberOfSolarPanels = (int) Math.round(Math.ceil(userElectricalUsage / 1000));
+        Integer numberOfSolarPanels = (int) Math.round(Math.ceil(200 * userElectricalUsage / 445));
         Integer volts = null;
         if (userElectricalUsage <= 3) {
             volts = 12;

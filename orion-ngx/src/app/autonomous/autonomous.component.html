@@ -1,12 +1,8 @@
 <div class="card">
   <div id="container">
-    <img
-      src="../../assets/hybrid.png"
-      class="image"
-      style="float: left"
-    />
+    <img src="../../assets/hybrid.png" class="image" style="float: left" />
     <div class="container">
-      <h3> Αυτόνομο Σύστημα</h3>
+      <h3>Αυτόνομο Σύστημα</h3>
       <p style="text-align: justify">
         Ως ιδιοκατανάλωση ηλεκτρισμού ορίζεται όταν καταναλωτές (ατομικοί ή
         εταιρικοί) καταναλώνουν ενέργεια παραγόμενη από κοντινές τους
@@ -39,7 +35,103 @@
         Η ιδιοκατανάλωση μπορεί να αφορά τόσο ατομικούς όσο και εταιρικούς
         καταναλωτές.
       </p>
+      <div class="container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
 
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>Τύπος Ηλιακού Πλαισίου:</th>
+            <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>
+              Φωτοβολταϊκό πλαίσιο Sharp Μονοκρυσταλλικού πυριτίου -445W
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+
+      <div class="container">
+        <table mat-table [dataSource]="outModifier" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>
+              Ρυθμιστής φόρτισης συσσωρευτών XTRA 4415N
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>
+              Είσοδος ρυθμιστή (προς τα ΦΒ πλαίσια)
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+
+      <div class="container">
+        <table mat-table [dataSource]="inModifier" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>
+              Ρυθμιστής φόρτισης συσσωρευτών XTRA 4415N
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>
+              Έξοδος ρυθμιστή (προς τους συσσωρευτές)
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+
+      <div class="container">
+        <table mat-table [dataSource]="rev" class="mat-elevation-z8">
+          <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>
+              Αντιστροφέας Victron Phoenix
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>
+              Τύπος αντιστροφέα
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>
