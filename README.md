@@ -1,6 +1,6 @@
 # Orion App.
 
-## This is an implementation for solar panels thesis author Iliana Giannaki.
+## This is an implementation for solar panels project.
 
 ### Description
 
